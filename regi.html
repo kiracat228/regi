@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація | NMT</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="Логотип" class="logo">
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="ukr.html">Українська</a>
+      <a href="bio.html">Біологія</a>
+      <a href="eng.html">Англійська</a>
+      <a href="regi.html" class="active">Реєстрація</a>
+    </nav>
+  </header>
+
+  <main class="register-form">
+    <h1>Реєстрація на курси</h1>
+    <form id="contactForm">
+      <label>Ім’я:</label>
+      <input type="text" name="firstName" required>
+
+      <label>Прізвище:</label>
+      <input type="text" name="lastName" required>
+
+      <label>Клас:</label>
+      <input type="text" name="class" required>
+
+      <label>Рік навчання:</label>
+      <input type="text" name="year" required>
+
+      <label>Номер телефону:</label>
+      <input type="tel" name="phone" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Курс:</label>
+      <select name="course" required>
+        <option value="">Оберіть курс</option>
+        <option value="Українська мова">Українська мова</option>
+        <option value="Біологія">Біологія</option>
+        <option value="Англійська мова">Англійська мова</option>
+      </select>
+
+      <label>Формат занять:</label>
+      <select name="format" required>
+        <option value="">Оберіть формат</option>
+        <option value="Індивідуально">Індивідуально</option>
+        <option value="У групі">У групі</option>
+      </select>
+
+      <button type="submit">Зареєструватись</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    Телефон: 0991708398 | Instagram: @nmtmerli
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Перевірка на запуск без сервера
+      if (window.location.protocol === 'file:') {
+        alert('Помилка! Ви відкрили файл як документ. PHP так не працює. Потрібно завантажити файли на хостинг або запустити локальний сервер.');
+        return;
+      }
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch('send2.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const text = await res.text();
+        console.log("Відповідь сервера:", text);
+
+        try {
+          const data = JSON.parse(text);
+          if (res.ok && data.success) {
+            alert('Заявку успішно відправлено в Telegram!');
+            form.reset();
+          } else {
+            alert('Помилка сервера: ' + (data.error || 'невідома'));
+          }
+        } catch (err) {
+          alert('Сервер повернув помилку. Перевірте консоль (F12).');
+        }
+      } catch (err) {
+        alert('Помилка мережі: Не вдалося знайти файл send2.php');
+      }
+    });
+  </script>
+</body>
+</html>
