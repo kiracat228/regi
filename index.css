@@ -1,0 +1,170 @@
+
+/* --- ОСНОВНИЙ СТИЛЬ MERLLI --- */
+:root {
+  --main-bg: #0f031b;
+  --pink: #ff007f;
+  --purple: #9d00ff;
+  --glass: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top right, #3d0066, var(--main-bg));
+  background-attachment: fixed;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Космічне тло */
+.stars {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  z-index: -1;
+  opacity: 0.4;
+  animation: starsMove 150s linear infinite;
+}
+
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
+
+/* Хедер */
+.main-header {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-big {
+  height: 80px;
+  filter: drop-shadow(0 0 10px var(--pink));
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+  color: var(--pink);
+  text-shadow: 0 0 10px var(--pink);
+}
+
+/* Скляні контейнери для ваших секцій */
+.glass-container {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+}
+
+/* Hero */
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #fff, var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   justify-content: center;
+}
+
+/* Переваги */
+.adv-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.adv-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  min-width: 200px;
+}
+
+/* Курси */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.course-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 280px;
+  padding: 1.5rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--pink);
+  box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(45deg, var(--purple), var(--pink));
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 15px var(--pink);
+}
+
+/* Плюшки */
+.bonus-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Космонавт */
+.astronaut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 60px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 100;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Футер */
+.footer {
+  background: rgba(0,0,0,0.8);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}

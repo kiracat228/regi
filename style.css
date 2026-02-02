@@ -1,0 +1,119 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+  color: #222;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #2ec4b6;
+}
+.logo {
+  height: 40px;
+}
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+nav a.active, nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+}
+.hero img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+.hero.single {
+  padding-top: 2rem;
+}
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.card h2 {
+  margin-top: 1rem;
+}
+.card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  background: #2ec4b6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.details {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.details ul {
+  padding-left: 1.5rem;
+}
+.details table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+.details th, .details td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+blockquote {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e0f7fa;
+  border-left: 4px solid #00796b;
+}
+
+.why-us {
+  background: #f1f1f1;
+  padding: 2rem;
+  text-align: center;
+}
+.why-us ul {
+  list-style: none;
+  padding: 0;
+}
+.why-us li {
+  margin: 0.5rem 0;
+}
+
+footer {
+  background: #2ec4b6;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+footer a {
+  color: white;
+  font-weight: bold;
+}

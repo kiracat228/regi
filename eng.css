@@ -1,0 +1,133 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+.header {
+  background-color: #bbdefb;
+  text-align: center;
+  padding: 1rem;
+}
+.logo-big {
+  height: 90px;
+}
+.methodology h2{
+padding: 2rem;
+ color: #0d47a1;
+  font-size: 1.9rem;
+  margin-top: 2rem;
+}
+.details {
+  padding: 2rem; }
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: bold;
+}
+nav a.active {
+  color: #d32f2f;
+}
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fce4ec;
+  animation: fadeIn 2s ease-in;
+}
+.hero img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+}
+ol li{
+   margin: 0.5rem 0;
+}
+.details {
+  padding: 2rem;
+}
+.details h2 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+ul li {
+  margin: 0.5rem 0;
+  list-style: "🇬🇧 ";
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  padding: 1rem;
+  border: 1px solid #90caf9;
+}
+.reviews {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.review {
+  background: #bbdefb;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 calc(50% - 2rem);
+  animation: slideIn 1s ease;
+}
+.btn-back {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #0d47a1;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.footer {
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.footer a {
+  color: white;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideIn {
+  from {transform: translateY(20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+th {
+  background-color: #e1bee7;
+  color: #4a0072;
+  padding: 1rem;
+  text-align: left;
+}
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+tr:hover {
+  background-color: #f3e5f5;
+}
